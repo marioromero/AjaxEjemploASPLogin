@@ -1,12 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
+	Layout = "~/Views/Shared/_IntranetLayout.cshtml";
 }
 
 
+@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Intranet", new { area = "" }, new { @class = "nav-link" })
 <div>
-    <h1>INTRANET</h1>
-    <!--<h2>Usuario: @ViewBag.usuario</h2>-->
+	<h1>INTRANET</h1>
+	<!--<h2>Usuario: @ViewBag.usuario</h2>-->
+
 
 </div>

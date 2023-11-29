@@ -14,6 +14,7 @@ namespace AjaxEjemploASPLogin.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -38,6 +39,9 @@ namespace AjaxEjemploASPLogin.Controllers
 
             if (usuario.CorreoElectronico == usuariobd.CorreoElectronico && usuario.Password == usuariobd.Password)
             {
+
+                FormsAuthentication.SetAuthCookie(usuario.CorreoElectronico, false);
+
                 return Json(new { success = true, redirectUrl = Url.Action("Index", "Intranet") });
             }
             else
